@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Start Shrek Dino!</title>
+  <style>
+    
+    /* CSS styles for the start game page */
+    body {
+      text-align: center;
+      padding: 50px;
+      font-family: Arial, sans-serif;
+      background-image: url('shreks-home.jpg');
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+    h1 {
+      margin-bottom: 30px;
+    }
+    .start-button {
+      padding: 10px 20px;
+      font-size: 18px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+<audio controls autoplay>
+  <source src="shrek-Welcome_to_the_Shrek.wav" type="audio/wav">
+</audio>
+  <h1>Welcome to the Shrek Dino Game! Click Start!</h1>
+  <button class="start-button" onclick="startGame()">Start Game</button>
+
+  <script>
+    function startGame() {
+      // Redirect to the game page
+      window.location.href = "game.html";
+    }
+  </script>
+</body>
+</html>
