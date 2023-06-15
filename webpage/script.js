@@ -76,9 +76,12 @@ function resumeMusic() {
 // Restart the game when the restart button is clicked
 restartButton.addEventListener("click", function () {
   handleNewGame();
+  counter = 0; // Reset the score counter to zero
+  document.getElementById("scoreSpan").innerHTML = "0"; // Update the score display
   resumeMusic();
   resetBlockPosition();
 });
+
 
 // Pause the movement of the block
 function pauseBlockMovement() {
@@ -172,7 +175,12 @@ function updateLeaderboard() {
   var tbody = leaderboardTable.getElementsByTagName("tbody")[0];
   tbody.innerHTML = ""; // Clear existing rows
 
-  // Add new rows
+  // Sort the leaderboard data based on score (descending order)
+  leaderboardData.sort(function (a, b) {
+    return b.score - a.score;
+  });
+
+  // Add new rows with updated ranks
   for (var i = 0; i < leaderboardData.length; i++) {
     var entry = leaderboardData[i];
     var row = tbody.insertRow();
@@ -180,11 +188,14 @@ function updateLeaderboard() {
     var nameCell = row.insertCell();
     var scoreCell = row.insertCell();
 
-    rankCell.textContent = entry.rank;
+    // Assign ranks based on the high score
+    var rank = i + 1;
+    rankCell.textContent = rank;
     nameCell.textContent = entry.name;
     scoreCell.textContent = entry.score;
   }
 }
+
 
 function submitName() {
   var playerName = document.getElementById("playerNameInput").value;
