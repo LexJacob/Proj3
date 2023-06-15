@@ -11,18 +11,19 @@
     <p>Best Score: <span id="scorebest">0</span></p>
     <div class="game">
         <img id="character" src="head.png">
-        <img id="block" src="Manboy.png">
-        <img id="block" src="donkey.png">
-        <img id="block" src="puss in boots.png">
-
-
-
-
+        <img id="block" class="block" src="Stilskin.png">
     </div>
-    <p style="color:red;">Play The Game <span id="scoreSpan"></span></p>
     <h1 id="btns" onkeypress='sta(this.id)'>
         Press Any Key To Jump!
     </h1>
+
+    <!-- Game Over Image -->
+    <div id="gameOverContainer">
+        <img id="gameOverImage" src="https://media.tenor.com/i7KjKFRCGvIAAAAd/dancing-shrek.gif">
+        <img id="overlayImage" src="https://recursion.tk/attachment.php?attachmentid=770&d=1425940706">
+        <audio id="gameOverSound" src="shrek-fatality.wav"></audio>
+        <button id="restartButton">Restart</button>
+    </div>
 
     <!-- Leaderboard HTML structure -->
     <div id="leaderboard-container">
@@ -39,7 +40,7 @@
             </tbody>
         </table>
     </div>
-
+    <audio id="backgroundMusic" src="Believer.mp3" loop></audio>
     <script src="script.js"></script>
 </body>
 </html>
